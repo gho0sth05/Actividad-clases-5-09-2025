@@ -7,7 +7,8 @@ La intersección de tipos permite combinar dos o más tipos en uno solo.
 Un valor de un tipo intersección debe cumplir todas las condiciones de los tipos combinados.
 ```bash
 Se representa con el símbolo &.
-``` 
+```
+
 # 2️⃣ ¿Cómo funciona?
 Se crean varios tipos por separado, por ejemplo:
 ```bash
@@ -20,8 +21,9 @@ Ahora, EmpleadoCompleto tiene todas las propiedades de Persona y Empleado.
 Si intentas crear un objeto que no tenga todas las propiedades, TypeScript dará error:
 ```bash
 const juan: EmpleadoCompleto = { nombre: "Juan" }; 
-//  Error: Falta la propiedad 'salario'
 ```
+Error: Falta la propiedad 'salario'
+
 # 3️⃣ ¿Para qué sirve?
 Permite reutilizar tipos y combinarlos según la necesidad del programa.
 Aumenta la seguridad de tipos, porque TypeScript asegura que los objetos cumplan todas las propiedades necesarias.
