@@ -1,4 +1,4 @@
-# INTERSECCIÓN DE TIPOS EN TYPESCRIPTen TypeScript
+# INTERSECCIÓN DE TIPOS EN TYPESCRIPT
 Con mi grupo de trabajo Karen Gonzalez, Laura Fonseca , Juan Bocanegra 
 ---
 
