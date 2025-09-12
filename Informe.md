@@ -45,7 +45,7 @@ En los tipos, hay una relación donde padre es ProductoBase y los hijos son los 
 
 **Refactor propuesto (antes → después)**
 
-```ts
+```
 // Antes (violando SRP y OCP)
 class Carrito {
   private productos: Producto[] = [];
@@ -103,7 +103,7 @@ class Carrito {
 
 **Refactor propuesto (antes → después)**
 
-```ts
+```
 // Antes (violando SRP y OCP)
 class GestorArchivos {
   guardar(productos: Producto[]) {
