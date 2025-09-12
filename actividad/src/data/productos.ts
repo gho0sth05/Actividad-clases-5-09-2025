@@ -1,3 +1,4 @@
+// Lista de productos variados que cumplen con el tipo Producto.
 import { Producto } from "../models/Producto";
 
 export const productos: Producto[] = [
