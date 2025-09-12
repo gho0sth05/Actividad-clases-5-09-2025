@@ -1,3 +1,5 @@
+// Clase genérica Carrito q almacena productos de tipo T, osea extienden los productos).
+// Este deja q el usuario agrege productos, pueda ver la lista y calcular el total de precios.
 import { Producto } from "./Producto";
 
 export class Carrito<T extends Producto> {
