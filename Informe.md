@@ -15,10 +15,11 @@ de identificar si cada clase o tipo tiene una única razón para cambiar y en ca
 soluciones para mejorar su diseño. Los módulos principales se encuentran en `src/models/`.
 
 En los tipos, hay una relación donde padre es ProductoBase y los hijos son los productos Libro, Ropa, Electrónico. En las clases no hay herencia, pero si se utilizan los genéricos: 
-•	ProductoBase: Define las propiedades comunes a todos los productos que son los nombres y los precios.
-•	Libro: Tiene ProductoBase con la propiedad autor.
-•	Ropa: Tiene ProductoBase con la propiedad talla.
-•	Electronico: Tiene ProductoBase con la propiedad marca.
+
+*	ProductoBase: Define las propiedades comunes a todos los productos que son los nombres y los precios.
+* Libro: Tiene ProductoBase con la propiedad autor.
+*	Ropa: Tiene ProductoBase con la propiedad talla.
+*	Electronico: Tiene ProductoBase con la propiedad marca.
 
 
 ## 2. Inventario de Clases Analizadas
