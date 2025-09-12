@@ -1,3 +1,6 @@
+// Define tipos base y específicos para los productos con nombre y precio
+// Tipos especializados Libro, Ropa y Electronico q extienden ProductoBase con propiedades 
+// Producto es un tipo unión q puede ser cualquiera de los tres tipos especializados.
 export type ProductoBase = {
   nombre: string;
   precio: number;
