@@ -7,28 +7,21 @@
 **FICHA:** 3203082  
 ---
 
-
 ## 1️ Contexto  
-Este informe analiza la aplicación de los principios **SOLID**:  
 
+Este informe analiza la aplicación de los principios **SOLID**:  
 - **Liskov Substitution Principle (LSP)**  
 - **Interface Segregation Principle (ISP)**  
 - **Dependency Inversion Principle (DIP)**  
 
-en el código del proyecto **“Actividad-clases-5-09-2025”**.  
+en el proyecto **“Actividad-clases-5-09-2025”**, desarrollado en TypeScript.  
 
-El proyecto implementa clases genéricas y tipos de unión en TypeScript para manejar diferentes tipos de productos.  
-
-**Jerarquía de tipos:**  
-- `ProductoBase`: propiedades comunes (`nombre`, `precio`).  
-- `Libro`: añade `autor`.  
-- `Ropa`: añade `talla`.  
-- `Electronico`: añade `marca`.  
-- `Producto`: unión de (`Libro | Ropa | Electronico`).  
+El sistema implementa un **modelo de productos** con clases genéricas y tipos de unión, además de un **carrito de compras** y un **gestor de archivos**.  
 
 ---
 
 ## 2️ Inventario de Clases/Interfaces Analizadas  
+
 - **Tipo 1:** `src/models/Producto.ts` — Jerarquía de productos.  
 - **Clase 1:** `src/models/Carrito.ts` — Gestión de productos en un carrito de compras.  
 - **Clase 2:** `src/models/GestorArchivos.ts` — Manejo genérico de colecciones de elementos.  
@@ -37,19 +30,19 @@ El proyecto implementa clases genéricas y tipos de unión en TypeScript para ma
 
 ## 3️ Análisis por Clase/Interfaz  
 
-###  3.1 `src/models/Producto.ts`  
+### 3.1 `src/models/Producto.ts`  
 **Rol:** Definición de la jerarquía de productos mediante unión de tipos.  
 
 - **L (Liskov Substitution)**  
-  - ✅ **Cumple**  
-  - Los subtipos (`Libro`, `Ropa`, `Electronico`) pueden usarse donde se espera un `Producto` sin romper la funcionalidad.  
+  - ✅ Cumple.  
+  - `Libro`, `Ropa` y `Electronico` pueden usarse donde se espera un `Producto` sin romper la funcionalidad.  
 
 - **I (Interface Segregation)**  
-  - ✅ **Cumple**  
-  - Cada tipo define solo sus propiedades, sin interfaces innecesarias.  
+  - ✅ Cumple.  
+  - Cada tipo define solo lo necesario, sin propiedades irrelevantes.  
 
 - **D (Dependency Inversion)**  
-  - ✅ **Cumple**  
+  - ✅ Cumple.  
   - `ProductoBase` funciona como abstracción; los tipos concretos dependen de ella.  
 
 ---
@@ -58,16 +51,16 @@ El proyecto implementa clases genéricas y tipos de unión en TypeScript para ma
 **Rol:** Clase genérica para gestión de productos en un carrito.  
 
 - **L (Liskov Substitution)**  
-  - ✅ **Cumple**  
-  - `Carrito<T extends Producto>` admite cualquier subtipo de `Producto`.  
+  - ✅ Cumple.  
+  - `Carrito<T extends Producto>` admite cualquier subtipo (`Libro`, `Ropa`, `Electronico`).  
 
 - **I (Interface Segregation)**  
-  - ✅ **Cumple**  
-  - Sus métodos (`agregarProducto`, `verProductos`, `calcularTotal`) son específicos y coherentes.  
+  - ✅ Cumple.  
+  - Sus métodos (`agregarProducto`, `verProductos`, `calcularTotal`) son claros y específicos.  
 
 - **D (Dependency Inversion)**  
-  - ✅ **Cumple**  
-  - Depende de la abstracción `Producto` y no de implementaciones concretas.  
+  - ✅ Cumple.  
+  - Depende de la abstracción `Producto`, no de implementaciones concretas.  
 
 ---
 
@@ -75,24 +68,26 @@ El proyecto implementa clases genéricas y tipos de unión en TypeScript para ma
 **Rol:** Clase genérica para manejo de colecciones en memoria.  
 
 - **L (Liskov Substitution)**  
-  - ✅ **Cumple**  
+  - ✅ Cumple.  
   - Funciona con cualquier tipo `T` sin romper comportamiento esperado.  
 
 - **I (Interface Segregation)**  
-  - ✅ **Cumple**  
+  - ✅ Cumple.  
   - Define solo lo esencial: `agregar` y `listar`.  
 
 - **D (Dependency Inversion)**  
-  - ✅ **Cumple**  
+  - ✅ Cumple.  
   - Depende de la abstracción genérica `T`.  
 
 ---
 
-##  Conclusiones  
-El diseño actual del proyecto aplica correctamente los principios **LSP, ISP y DIP**:  
+## 4️ Conclusiones Generales  
 
-- **LSP:** Subtipos pueden sustituir al tipo base sin romper la funcionalidad.  
-- **ISP:** Interfaces y tipos son mínimos y específicos, evitando dependencias innecesarias.  
-- **DIP:** Clases como `Carrito` y `GestorArchivos` dependen de abstracciones (`Producto`, genéricos `T`), no de implementaciones concretas.  
+- **LSP:** Se cumple en todas las clases y tipos, ya que los subtipos pueden sustituir a sus padres sin romper la funcionalidad.  
+- **ISP:** Se cumple porque las interfaces y clases son específicas, sin obligar a implementar métodos o propiedades irrelevantes.  
+- **DIP:** Se cumple porque `Carrito` y `GestorArchivos` dependen de abstracciones (tipos, genéricos) en lugar de implementaciones concretas.  
 
-👉 Esto asegura un sistema **modular, flexible y fácil de mantener**, preparado para crecer sin romper el diseño existente.  
+
+
+
+
